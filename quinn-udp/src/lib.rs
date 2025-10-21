@@ -41,7 +41,7 @@ use std::{
 #[cfg(any(unix, windows))]
 mod cmsg;
 
-#[cfg(unix)]
+#[cfg(all(unix, not(feature = "shadow")))]
 #[path = "unix.rs"]
 mod imp;
 
@@ -50,7 +50,7 @@ mod imp;
 mod imp;
 
 // No ECN support
-#[cfg(not(any(wasm_browser, unix, windows)))]
+#[cfg(not(any(wasm_browser, all(unix, not(feature = "shadow")), windows)))]
 #[path = "fallback.rs"]
 mod imp;
 

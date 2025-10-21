@@ -20,6 +20,9 @@ direct-log = ["dep:log"]
 # Use private Apple APIs to send multiple packets in a single syscall.
 fast-apple-datapath = []
 
+# https://github.com/shadow/shadow
+shadow = []
+
 [dependencies]
 libc = "0.2.158"
 log = { workspace = true, optional = true }

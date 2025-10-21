@@ -42,6 +42,9 @@ log = ["tracing/log", "proto/log", "udp/log"]
 # Enable rustls logging
 rustls-log = ["rustls?/logging"]
 
+# https://github.com/shadow/shadow
+shadow = ["udp/shadow"]
+
 [dependencies]
 async-io = { workspace = true, optional = true }
 async-std = { workspace = true, optional = true }
